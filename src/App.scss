@@ -4,9 +4,9 @@
   padding: 10px 20px;
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(2px);
   border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.418);
   overflow: hidden;
 }
 
@@ -67,10 +67,6 @@
   100%{
      background-position: -200% 0;
   }
-}
-
-.vertical {
-  border-left: 1px solid;
 }
 
 .skill-chip{
