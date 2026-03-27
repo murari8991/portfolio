@@ -1,10 +1,9 @@
-import { useState } from 'react'
-import './App.scss'
+import './App.scss';
 
 function App() {
-
+  
   return (
-    <div class="text-[#eae3ae] mx-8 mt-48">
+    <div class="text-[#c8c6d7] mx-8 mt-48 scroll-smooth">
       <section id="landing" class="flex flex-col items-center mb-96 gap-y-4">
         <div class="flex items-center justify-center">
           <h1 class="content-card text-7xl font-bold"><span class="hero">Murari Ponduru</span></h1>
@@ -14,15 +13,14 @@ function App() {
         </div>
       </section>
 
-      <section id="about" class="flex flex-col items-center mb-40">
+      <section id="about" class="flex flex-col items-center mb-40 wrapper">
         <div class="content-card flex flex-col gap-6">
           <div class="pt-4">
             <h3 class="text-2xl font-bold">About me</h3>
           </div>
           <hr></hr>
-          <div class="flex gap-x-3 content">
+          <div class="flex flex-col gap-4">
             <h2 class="text-5xl text-[#ffbd00] font-bold basis-3/12">Hi, name's Murari</h2>
-            <div class="border-solid border-l mr-6"></div>
             <p class="text-lg basis-10/12 font-semibold">
               I am a passionate about learning new things in technology and applying it in real-life.
               Working on projects and building applications that provide value to people is what fuels me. 
@@ -30,10 +28,10 @@ function App() {
               My goal is to be a developer, watching and contributing to the everchanging technology.
             </p>
           </div>
-          <div class="flex gap-8 mb-4">
-            <a href="https://www.linkedin.com/in/s-m-v-a-lakshmanacharyulu-ponduru-43b8aa24b" class="p-2 bg-[#ffbb006b] rounded-md">LinkedIn</a>
-            <a href="https://github.com/Murari-Lakshman" class="px-4 py-2 bg-[#ffbb006b] rounded-md">Github</a>
-            <a href="https://leetcode.com/u/MxWHMnMB8v/" class="p-2 bg-[#ffbb006b] rounded-md">Leetcode</a>
+          <div class="flex gap-6 mb-4">
+            <a href="https://www.linkedin.com/in/s-m-v-a-lakshmanacharyulu-ponduru-43b8aa24b" class="p-2 border border-[#c8c6d7] rounded-md">LinkedIn</a>
+            <a href="https://github.com/Murari-Lakshman" class="px-4 py-2 border border-[#c8c6d7] rounded-md">Github</a>
+            <a href="https://leetcode.com/u/MxWHMnMB8v/" class="p-2 border border-[#c8c6d7] rounded-md">Leetcode</a>
           </div>
         </div>
       </section>
@@ -45,18 +43,18 @@ function App() {
           </div>
           <hr></hr>
           <ul class="flex flex-col gap-4 mb-4">
-            <li>
+            <li class="flex flex-col gap-1">
               <h3>Languages: </h3>
-              <div class="flex gap-4">
+              <div class="flex gap-4 font-semibold">
                 <p class="skill-chip">Python</p>
                 <p class="skill-chip">SQL</p>
                 <p class="skill-chip">R</p>
                 <p class="skill-chip">TypeScript</p>
               </div>
             </li>
-            <li>
+            <li class="flex flex-col gap-1">
               <h3>AI & ML: </h3>
-              <div class="flex gap-4">
+              <div class="flex gap-4 font-semibold">
                 <p class="skill-chip">Large Language Models (LLMs)</p>
                 <p class="skill-chip">Fine-tuning</p>
                 <p class="skill-chip">NLP</p>
@@ -65,9 +63,9 @@ function App() {
                 <p class="skill-chip">RAG</p>
               </div>
             </li>
-            <li>
+            <li class="flex flex-col gap-1">
               <h3>Tools & Methodologies:</h3>
-              <div class="flex gap-4">
+              <div class="flex gap-4 font-semibold">
                 <p class="skill-chip">Git</p>
                 <p class="skill-chip">GitHub</p>
                 <p class="skill-chip">Agile/Scrum</p>
@@ -75,9 +73,9 @@ function App() {
                 <p class="skill-chip">Algorithms</p>
               </div>
             </li>
-            <li>
+            <li class="flex flex-col gap-1">
               <h3>Data Science:</h3>
-              <div class="flex gap-4">
+              <div class="flex gap-4 font-semibold">
                 <p class="skill-chip">Data Pipelines</p>
                 <p class="skill-chip">ETL Pipelines</p>
                 <p class="skill-chip">Data Engineering</p>
@@ -96,7 +94,7 @@ function App() {
             <h3 class="text-2xl font-bold">My Experience</h3>
           </div>
           <hr></hr>
-          <ul class="flex flex-col gap-4 mb-4">
+          <ul class="flex flex-col gap-6 mb-4">
             <li class="skill-chip">
               <div class="flex flex-col gap-4 m-4">
                 <div class="flex gap-4 justify-between">
@@ -140,15 +138,18 @@ function App() {
             <h3 class="text-2xl font-bold">Education</h3>
           </div>
           <hr></hr>
-          <ul class="flex flex-col gap-4 mb-4">
+          <ul class="flex flex-col gap-8 mb-4">
             <li class="skill-chip">
-              <div>
-                <h2>Masters in Information Systems</h2>
-              </div>
-              <div>
-                <p>Saint Louis University, St. Louis, MO</p>
-                <p>Aug 2024 to May 2026 (Currently pursuing)</p>
-                <p>
+              <div class="flex flex-col gap-4 m-4">
+                <div class="flex gap-4 justify-between">
+                  <h2 class="text-[#ffbd00] text-2xl font-bold mt-3">Masters in Information Systems</h2>
+                  <div class="flex flex-col mr-4 items-end italic text-lg">
+                    <p>Saint Louis University, St. Louis, MO</p>
+                    <p class="font-semibold">Aug 2024 to May 2026 (Currently pursuing)</p>
+                  </div>
+                </div>
+                <hr></hr>
+                <p class="text-lg font-semibold">
                     Member of Alpha Sigma Nu, an honorary society that recognizes students who distinguish themselves in
                     scholarship, loyalty and service and encourages its members to a lifetime pursuit of intellectual development, deepening
                     Ignatian spirituality, service to others, and a commitment to the core principles of Jesuit education.
@@ -156,13 +157,16 @@ function App() {
               </div>
             </li>
             <li class="skill-chip">
-              <div>
-                <h2>Bachelors in Computer Science</h2>
-              </div>
-              <div>
-                <p>Surampalem, Andhra Pradesh, India</p>
-                <p>Sept 2020 to May 2024</p>
-                <p>
+              <div class="flex flex-col gap-4 m-4">
+                <div class="flex gap-4 justify-between">
+                  <h2 class="text-[#ffbd00] text-2xl font-bold mt-3">Bachelors in Computer Science</h2>
+                  <div class="flex flex-col mr-4 items-end italic text-lg">
+                    <p>Surampalem, Andhra Pradesh, India</p>
+                    <p class="font-semibold">Sept 2020 to May 2024</p>
+                  </div>
+                </div>
+                <hr></hr>
+                <p class="text-lg font-semibold">
                     Moderator for the sophomore and Junior year. 
                     Worked closely to establish clubs in the college and actively recruit people to run the clubs and inspire students to pursue their career in technical fields. 
                     Club Coordinator for the junior year, maintained the established Industry 4.0 clubs. 
@@ -180,27 +184,45 @@ function App() {
             <h3 class="text-2xl font-bold">Projects</h3>
           </div>
           <hr></hr>
-          <ul class="flex flex-col gap-4 mb-4">
+          <ul class="flex flex-col gap-6 mb-4">
             <li class="skill-chip">
-              <div>
-                <h2>ML Model to Find Salary Using Experience</h2>
-              </div>
-              <div>
-                <p>
+              <div class="flex flex-col gap-4">
+                <h2 class="text-[#ffbd00] text-2xl font-bold mt-3">ML Model to Find Salary Using Experience</h2>
+                <hr></hr>
+                <p class="text-lg font-semibold">
                   Built a simple linear regression model using Numpy and Matplotlib.
                   Achieved and R2 score of approximately 0.99.
                 </p>
+                <div class="mb-4">
+                  <a href="https://github.com/Murari-Lakshman/Simple-Linear-Regression" class="p-2 border border-[#c8c6d7] rounded-md">repo</a>
+                </div>
               </div>
             </li>
             <li class="skill-chip">
-              <div>
-                <h2>Web-Crawling and Data Cleaning using Python</h2>
-              </div>
-              <div>
-                <p>
+              <div class="flex flex-col gap-4">
+                <h2 class="text-[#ffbd00] text-2xl font-bold mt-3">Web-Crawling and Data Cleaning using Python</h2>
+                <hr></hr>
+                <p class="text-lg font-semibold">
                   Scraped the website for data and presented the data in a structured fashion in csv file.
                   Utilized web crawling libraries like beautifulSoup.
                 </p>
+                <div class="mb-4">
+                  <a href="https://github.com/Murari-Lakshman/WebCrawling-Allergies" class="p-2 border border-[#c8c6d7] rounded-md mb-4">repo</a>
+                </div>
+              </div>
+            </li>
+            <li class="skill-chip">
+              <div class="flex flex-col gap-4">
+                <h2 class="text-[#ffbd00] text-2xl font-bold mt-3">My Portfolio</h2>
+                <hr></hr>
+                <p class="text-lg font-semibold">
+                  This is a static website developed using HTML, CSS, JS, React and Vite.
+                  I am still building it, so I am leaving the description empty.
+                  This website contains all my achievements and also acts as a text of my skills.
+                </p>
+                <div class="mb-4">
+                  <a href="https://github.com/murari8991/portfolio" class="p-2 border border-[#c8c6d7] rounded-md mb-4">repo</a>
+                </div>
               </div>
             </li>
           </ul>
@@ -213,7 +235,7 @@ function App() {
         </div>
       </section> */}
 
-      <footer class="flex items-center justify-center bg-[#550000]">
+      <footer class="flex items-center justify-center">
         <p>email: murari2lakshman.ponduru@gmail.com</p>
       </footer>
     </div>
