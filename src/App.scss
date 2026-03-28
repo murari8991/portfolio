@@ -74,3 +74,15 @@
   border-radius: 12px;
   padding: 10px 16px;
 }
+
+.icon-wrap:hover{
+  background: #c8c6d7;
+  .icon{
+    color: #17153b;
+    transition: .5s;
+    transform: rotateY(360deg);
+    :first-child{
+      color: #17153b;
+    }
+  }
+}

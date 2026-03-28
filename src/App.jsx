@@ -1,18 +1,26 @@
 import './App.scss';
+import ParticleBackground from './particleBg.jsx';
+import { ImLinkedin2 } from "react-icons/im";
+import { SiLeetcode } from "react-icons/si";
+import { IoLogoGithub } from "react-icons/io5";
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 function App() {
   
   return (
-    <div class="text-[#c8c6d7] mx-8 mt-48 scroll-smooth">
-      <section id="landing" class="flex flex-col items-center mb-96 gap-y-4">
-        <div class="flex items-center justify-center">
-          <h1 class="content-card text-7xl font-bold"><span class="hero">Murari Ponduru</span></h1>
+    <div class="text-[#c8c6d7] scroll-smooth">
+      <ParticleBackground>
+      <section id="landing" class="flex flex-col items-center mb-96 mt-48 gap-y-4">
+        <div class="content-card flex items-center justify-center">
+          <h1 class=" text-7xl font-bold hero">Murari Ponduru</h1>
         </div>
         <div class="typewriter content-card">
           <span class="placeholder"></span>
         </div>
       </section>
-
+      </ParticleBackground>
+      
+      <div class="mx-8">
       <section id="about" class="flex flex-col items-center mb-40 wrapper">
         <div class="content-card flex flex-col gap-6">
           <div class="pt-4">
@@ -28,10 +36,10 @@ function App() {
               My goal is to be a developer, watching and contributing to the everchanging technology.
             </p>
           </div>
-          <div class="flex gap-6 mb-4">
-            <a href="https://www.linkedin.com/in/s-m-v-a-lakshmanacharyulu-ponduru-43b8aa24b" class="p-2 border border-[#c8c6d7] rounded-md">LinkedIn</a>
-            <a href="https://github.com/Murari-Lakshman" class="px-4 py-2 border border-[#c8c6d7] rounded-md">Github</a>
-            <a href="https://leetcode.com/u/MxWHMnMB8v/" class="p-2 border border-[#c8c6d7] rounded-md">Leetcode</a>
+          <div class="flex gap-4 mb-4">
+            <a href="https://www.linkedin.com/in/s-m-v-a-lakshmanacharyulu-ponduru-43b8aa24b" class="p-2 border border-[#c8c6d7] rounded-full icon-wrap"><ImLinkedin2  class="size-5 icon"/></a>
+            <a href="https://github.com/Murari-Lakshman" class="p-2 border border-[#c8c6d7] rounded-full icon-wrap"><IoLogoGithub class="size-5 icon"/></a>
+            <a href="https://leetcode.com/u/MxWHMnMB8v/" class="p-2 border border-[#c8c6d7] rounded-full icon-wrap"><SiLeetcode  class="size-5 icon"/></a>
           </div>
         </div>
       </section>
@@ -186,43 +194,49 @@ function App() {
           <hr></hr>
           <ul class="flex flex-col gap-6 mb-4">
             <li class="skill-chip">
-              <div class="flex flex-col gap-4">
-                <h2 class="text-[#ffbd00] text-2xl font-bold mt-3">ML Model to Find Salary Using Experience</h2>
+              <div class="flex flex-col gap-4 mb-2">
+                <div class="flex justify-between">
+                  <h2 class="text-[#ffbd00] text-2xl font-bold mt-3">ML Model to Find Salary Using Experience</h2>
+                  <div>
+                  <a href="https://github.com/Murari-Lakshman/Simple-Linear-Regression" class="flex rounded mt-5 p-1 icon-wrap"><FaExternalLinkAlt class="size-4 icon"/></a>
+                  </div>
+                </div>
                 <hr></hr>
                 <p class="text-lg font-semibold">
                   Built a simple linear regression model using Numpy and Matplotlib.
                   Achieved and R2 score of approximately 0.99.
                 </p>
-                <div class="mb-4">
-                  <a href="https://github.com/Murari-Lakshman/Simple-Linear-Regression" class="p-2 border border-[#c8c6d7] rounded-md">repo</a>
-                </div>
               </div>
             </li>
             <li class="skill-chip">
-              <div class="flex flex-col gap-4">
-                <h2 class="text-[#ffbd00] text-2xl font-bold mt-3">Web-Crawling and Data Cleaning using Python</h2>
+              <div class="flex flex-col gap-4 mb-2">
+                <div class="flex justify-between">
+                  <h2 class="text-[#ffbd00] text-2xl font-bold mt-3">Web-Crawling and Data Cleaning using Python</h2>
+                  <div>
+                  <a href="https://github.com/Murari-Lakshman/WebCrawling-Allergies" class="flex rounded mt-5 p-1 icon-wrap"><FaExternalLinkAlt class="size-4 icon"/></a>
+                  </div>
+                </div>
                 <hr></hr>
                 <p class="text-lg font-semibold">
                   Scraped the website for data and presented the data in a structured fashion in csv file.
                   Utilized web crawling libraries like beautifulSoup.
                 </p>
-                <div class="mb-4">
-                  <a href="https://github.com/Murari-Lakshman/WebCrawling-Allergies" class="p-2 border border-[#c8c6d7] rounded-md mb-4">repo</a>
-                </div>
               </div>
             </li>
             <li class="skill-chip">
-              <div class="flex flex-col gap-4">
-                <h2 class="text-[#ffbd00] text-2xl font-bold mt-3">My Portfolio</h2>
+              <div class="flex flex-col gap-4 mb-2">
+                <div class="flex justify-between">
+                  <h2 class="text-[#ffbd00] text-2xl font-bold mt-3">My Portfolio</h2>
+                  <div>
+                  <a href="https://github.com/murari8991/portfolio" class="flex rounded mt-5 p-1 icon-wrap"><FaExternalLinkAlt class="size-4 icon"/></a>
+                  </div>
+                </div>
                 <hr></hr>
                 <p class="text-lg font-semibold">
                   This is a static website developed using HTML, CSS, JS, React and Vite.
                   I am still building it, so I am leaving the description empty.
                   This website contains all my achievements and also acts as a text of my skills.
                 </p>
-                <div class="mb-4">
-                  <a href="https://github.com/murari8991/portfolio" class="p-2 border border-[#c8c6d7] rounded-md mb-4">repo</a>
-                </div>
               </div>
             </li>
           </ul>
@@ -238,6 +252,8 @@ function App() {
       <footer class="flex items-center justify-center">
         <p>email: murari2lakshman.ponduru@gmail.com</p>
       </footer>
+      </div>
+      
     </div>
   )
 }
