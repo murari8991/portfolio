@@ -1,8 +1,8 @@
 import { useEffect, useRef } from "react";
 
 const CONFIG = {
-  count:      20,    // safe range: 40–80
-  speedScale: 1,
+  count:      50,    // safe range: 40–80
+  speedScale: 0.8,
   minSize:    50,     // radius in px (larger = visible without blur)
   maxSize:    80,
   minOpacity: 0.35,
@@ -112,14 +112,13 @@ export default function ParticleBackground({ children, style, className }) {
       style={{
         position: "relative",
         overflow: "hidden",
-        background: "linear-gradient(to right, #17153b, #2e236c)",
         ...style,
       }}
     >
       <canvas
         ref={canvasRef}
         style={{
-          position: "absolute",
+          position: "fixed",
           top: 0,
           left: 0,
           pointerEvents: "none",
