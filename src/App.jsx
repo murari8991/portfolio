@@ -1,24 +1,26 @@
 import './App.scss';
+import ExpandableCard from './expandableCard.jsx';
 import ParticleBackground from './particleBg.jsx';
 import { ImLinkedin2 } from "react-icons/im";
 import { SiLeetcode } from "react-icons/si";
 import { IoLogoGithub } from "react-icons/io5";
 import { FaExternalLinkAlt } from "react-icons/fa";
+import { MdKeyboardArrowDown } from "react-icons/md";
 
 function App() {
   
   return (
     <div class="text-[#c8c6d7] scroll-smooth">
       <ParticleBackground>
-      <section id="landing" class="flex flex-col items-center mb-96 mt-48 gap-y-4">
-        <div class="content-card flex items-center justify-center">
-          <h1 class=" text-7xl font-bold hero">Murari Ponduru</h1>
+      <section id="landing" class="flex flex-col items-center mb-96 mt-48 gap-y-4 mx-8">
+        <div class="content-card">
+          <h1 class="font-bold hero text-6xl text-center">Murari Ponduru</h1>
         </div>
         <div class="typewriter content-card">
           <span class="placeholder"></span>
         </div>
       </section>
-      </ParticleBackground>
+      
       
       <div class="mx-8">
       <section id="about" class="flex flex-col items-center mb-40 wrapper">
@@ -28,7 +30,7 @@ function App() {
           </div>
           <hr></hr>
           <div class="flex flex-col gap-4">
-            <h2 class="text-5xl text-[#ffbd00] font-bold basis-3/12">Hi, name's Murari</h2>
+            <h2 class="text-[#aca1eb] text-5xl font-bold basis-3/12">Hi, name's Murari</h2>
             <p class="text-lg basis-10/12 font-semibold">
               I am a passionate about learning new things in technology and applying it in real-life.
               Working on projects and building applications that provide value to people is what fuels me. 
@@ -45,24 +47,28 @@ function App() {
       </section>
 
       <section id="skills" class="flex flex-col mb-40">
-        <div class="content-card flex flex-col gap-6">
+        <div class="flex flex-col gap-6">
           <div class="pt-4">
-            <h3 class="text-2xl font-bold">Skills and Stack</h3>
+            <h3 class="text-[#aca1eb] text-2xl font-bold">Skills and Stack</h3>
           </div>
           <hr></hr>
-          <ul class="flex flex-col gap-4 mb-4">
-            <li class="flex flex-col gap-1">
-              <h3>Languages: </h3>
-              <div class="flex gap-4 font-semibold">
+          <ul class="flex flex-col gap-10 mb-4">
+            <li class="grid gap-4 md:grid-cols-12">
+              <div class="md:col-span-4">
+                <h3 class="font-bold text-2xl">Languages: </h3>
+              </div>
+              <div class="md:col-span-7 flex flex-wrap gap-x-6 gap-y-6 text-xl font-normal">
                 <p class="skill-chip">Python</p>
                 <p class="skill-chip">SQL</p>
                 <p class="skill-chip">R</p>
                 <p class="skill-chip">TypeScript</p>
               </div>
             </li>
-            <li class="flex flex-col gap-1">
-              <h3>AI & ML: </h3>
-              <div class="flex gap-4 font-semibold">
+            <li class="grid gap-4 md:grid-cols-12">
+              <div class="md:col-span-4">
+                <h3 class="font-bold text-2xl">AI & ML: </h3>
+              </div>
+              <div class="md:col-span-7 flex flex-wrap gap-x-6 gap-y-6 text-xl font-normal">
                 <p class="skill-chip">Large Language Models (LLMs)</p>
                 <p class="skill-chip">Fine-tuning</p>
                 <p class="skill-chip">NLP</p>
@@ -71,9 +77,11 @@ function App() {
                 <p class="skill-chip">RAG</p>
               </div>
             </li>
-            <li class="flex flex-col gap-1">
-              <h3>Tools & Methodologies:</h3>
-              <div class="flex gap-4 font-semibold">
+            <li class="grid gap-4 md:grid-cols-12">
+              <div class="md:col-span-4">
+                <h3 class="font-bold text-2xl">Tools & Methodologies:</h3>
+              </div>
+              <div class="md:col-span-7 flex flex-wrap gap-x-6 gap-y-6 text-xl font-normal">
                 <p class="skill-chip">Git</p>
                 <p class="skill-chip">GitHub</p>
                 <p class="skill-chip">Agile/Scrum</p>
@@ -81,9 +89,11 @@ function App() {
                 <p class="skill-chip">Algorithms</p>
               </div>
             </li>
-            <li class="flex flex-col gap-1">
-              <h3>Data Science:</h3>
-              <div class="flex gap-4 font-semibold">
+            <li class="grid gap-4 md:grid-cols-12">
+              <div class="md:col-span-4">
+                <h3 class="font-bold text-2xl">Data Science:</h3>
+              </div>
+              <div class="md:col-span-7 flex flex-wrap gap-x-6 gap-y-6 text-xl font-normal">
                 <p class="skill-chip">Data Pipelines</p>
                 <p class="skill-chip">ETL Pipelines</p>
                 <p class="skill-chip">Data Engineering</p>
@@ -97,121 +107,88 @@ function App() {
       </section>
 
       <section id="experience" class="flex flex-col mb-40">
-        <div class="content-card flex flex-col gap-6">
+        <div class="flex flex-col gap-6">
           <div class="pt-4">
-            <h3 class="text-2xl font-bold">My Experience</h3>
+            <h3 class="text-[#aca1eb] text-2xl font-bold">My Experience</h3>
           </div>
-          <hr></hr>
-          <ul class="flex flex-col gap-6 mb-4">
-            <li class="skill-chip">
-              <div class="flex flex-col gap-4 m-4">
-                <div class="flex gap-4 justify-between">
-                  <h2 class="text-[#ffbd00] text-2xl font-bold mt-3">Summer Intern</h2>
-                  <div class="flex flex-col mr-4 items-end">
-                    <p class="italic font-semibold text-lg">CoreCard, Norcross, Georgia</p>
-                    <p class="italic text-lg">May 2025 to July 2025</p>
-                  </div>
-                </div>
-                <hr></hr>
-                <p class="text-lg font-semibold">
-                  Designed a custom MCP for an in-house Gen-AI application that utilizes a RAG.
+          <ul class="flex flex-col gap-12 mb-4">
+            <li>
+              <ExpandableCard title="Summer Intern" 
+              desc="Designed a custom MCP for an in-house Gen-AI application that utilizes a RAG.
                   Contributed to modernizing the company's product by developing a new front-end using React and TypeScript.
-                  Obfuscated the proprietry source code of using Python to ensure reliablity during training.
-                </p>
-              </div>
+                  Obfuscated the proprietry source code of using Python to ensure reliablity during training." 
+              sub1="CoreCard, Norcross, Georgia" 
+              sub2="May 2025 to July 2025"/>
             </li>
-            <li class="skill-chip">
-              <div class="flex flex-col gap-4 m-4">
-                <div class="flex gap-4 justify-between">
-                  <h2 class="text-[#ffbd00] text-2xl font-bold mt-3">Software Intern</h2>
-                  <div class="flex flex-col mr-4 items-end">
-                    <p class="italic text-lg font-semibold">Techsophy Solutions, Hyd, IN</p>
-                    <p class="italic text-lg">May 2023 to July 2023</p>
-                  </div>
-                </div>
-                <hr></hr>
-                <p class="text-lg font-semibold">
-                  Employed Machine Vision and AI to detect cars to secure a community and track the cars going in and out.
-                  Fine-tuned YOLO V5 model to ensure proper detection.
-                </p>
-              </div>
+            <li>
+              <ExpandableCard title="Software Intern"
+              sub1="Techsophy Solutions, Hyd, IN" 
+              sub2="May 2023 to July 2023"
+              desc="Employed Machine Vision and AI to detect cars to secure a community and track the cars going in and out.
+                  Fine-tuned YOLO V5 model to ensure proper detection."/>
             </li>
           </ul>
         </div>
       </section>
 
       <section id="edu" class="flex flex-col mb-40">
-        <div class="content-card flex flex-col gap-6">
+        <div class="flex flex-col gap-6">
           <div class="pt-4">
-            <h3 class="text-2xl font-bold">Education</h3>
+            <h3 class="text-[#aca1eb] text-2xl font-bold">Education</h3>
           </div>
-          <hr></hr>
-          <ul class="flex flex-col gap-8 mb-4">
-            <li class="skill-chip">
-              <div class="flex flex-col gap-4 m-4">
-                <div class="flex gap-4 justify-between">
-                  <h2 class="text-[#ffbd00] text-2xl font-bold mt-3">Masters in Information Systems</h2>
-                  <div class="flex flex-col mr-4 items-end italic text-lg">
-                    <p>Saint Louis University, St. Louis, MO</p>
-                    <p class="font-semibold">Aug 2024 to May 2026 (Currently pursuing)</p>
-                  </div>
-                </div>
-                <hr></hr>
-                <p class="text-lg font-semibold">
-                    Member of Alpha Sigma Nu, an honorary society that recognizes students who distinguish themselves in
+          <ul class="flex flex-col gap-12 mb-4">
+            <li>
+              <ExpandableCard 
+              title="Masters in Information Systems"
+              sub1="Saint Louis University, St. Louis, MO"
+              sub2="Aug 2024 to May 2026 (Currently pursuing)"
+              desc="Member of Alpha Sigma Nu, an honorary society that recognizes students who distinguish themselves in
                     scholarship, loyalty and service and encourages its members to a lifetime pursuit of intellectual development, deepening
-                    Ignatian spirituality, service to others, and a commitment to the core principles of Jesuit education.
-                </p>
-              </div>
+                    Ignatian spirituality, service to others, and a commitment to the core principles of Jesuit education."
+              />
             </li>
-            <li class="skill-chip">
-              <div class="flex flex-col gap-4 m-4">
-                <div class="flex gap-4 justify-between">
-                  <h2 class="text-[#ffbd00] text-2xl font-bold mt-3">Bachelors in Computer Science</h2>
-                  <div class="flex flex-col mr-4 items-end italic text-lg">
-                    <p>Surampalem, Andhra Pradesh, India</p>
-                    <p class="font-semibold">Sept 2020 to May 2024</p>
-                  </div>
-                </div>
-                <hr></hr>
-                <p class="text-lg font-semibold">
-                    Moderator for the sophomore and Junior year. 
+            <li>
+              <ExpandableCard 
+              title="Bachelors in Computer Science"
+              sub1="Surampalem, Andhra Pradesh, India"
+              sub2="Sept 2020 to May 2024"
+              desc="Moderator for the sophomore and Junior year. 
                     Worked closely to establish clubs in the college and actively recruit people to run the clubs and inspire students to pursue their career in technical fields. 
                     Club Coordinator for the junior year, maintained the established Industry 4.0 clubs. 
-                    Appreciated by the director for my outstanding efforts in establishing clubs.
-                </p>
-              </div>
+                    Appreciated by the director for my outstanding efforts in establishing clubs."
+              />
             </li>
           </ul>
         </div>
       </section>
 
       <section id="projects"  class="flex flex-col mb-16">
-        <div class="content-card flex flex-col gap-6">
+        <div class="flex flex-col gap-6">
           <div class="pt-4">
-            <h3 class="text-2xl font-bold">Projects</h3>
+            <h3 class="text-[#aca1eb] text-2xl font-bold">Projects</h3>
           </div>
-          <hr></hr>
-          <ul class="flex flex-col gap-6 mb-4">
-            <li class="skill-chip">
+          <ul class="flex flex-col gap-12 mb-4">
+            <li class="content-card">
               <div class="flex flex-col gap-4 mb-2">
                 <div class="flex justify-between">
-                  <h2 class="text-[#ffbd00] text-2xl font-bold mt-3">ML Model to Find Salary Using Experience</h2>
+                  <h2 class="text-2xl font-bold mt-3">ML Model to Find Salary Using Experience</h2>
                   <div>
                   <a href="https://github.com/Murari-Lakshman/Simple-Linear-Regression" class="flex rounded mt-5 p-1 icon-wrap"><FaExternalLinkAlt class="size-4 icon"/></a>
                   </div>
                 </div>
                 <hr></hr>
                 <p class="text-lg font-semibold">
-                  Built a simple linear regression model using Numpy and Matplotlib.
-                  Achieved and R2 score of approximately 0.99.
+                  A Simple linear regression model to predict the salary using the experience of an individual. 
+                  This is model that is created only using numpy and matplotlib 
+                  (with the exception of sklearn to determine how accurate our model is using r2 score). 
+                  First we use a very simple dataset downloaded from Kaggle.
                 </p>
               </div>
             </li>
-            <li class="skill-chip">
+            <li class="content-card">
               <div class="flex flex-col gap-4 mb-2">
                 <div class="flex justify-between">
-                  <h2 class="text-[#ffbd00] text-2xl font-bold mt-3">Web-Crawling and Data Cleaning using Python</h2>
+                  <h2 class="text-2xl font-bold mt-3">Web-Crawling and Data Cleaning using Python</h2>
                   <div>
                   <a href="https://github.com/Murari-Lakshman/WebCrawling-Allergies" class="flex rounded mt-5 p-1 icon-wrap"><FaExternalLinkAlt class="size-4 icon"/></a>
                   </div>
@@ -223,10 +200,10 @@ function App() {
                 </p>
               </div>
             </li>
-            <li class="skill-chip">
+            <li class="content-card">
               <div class="flex flex-col gap-4 mb-2">
                 <div class="flex justify-between">
-                  <h2 class="text-[#ffbd00] text-2xl font-bold mt-3">My Portfolio</h2>
+                  <h2 class="text-2xl font-bold mt-3">My Portfolio</h2>
                   <div>
                   <a href="https://github.com/murari8991/portfolio" class="flex rounded mt-5 p-1 icon-wrap"><FaExternalLinkAlt class="size-4 icon"/></a>
                   </div>
@@ -243,17 +220,11 @@ function App() {
         </div>
       </section>
 
-      {/* <section id="cetificates">
-        <div>
-          <h3>Certifia</h3>
-        </div>
-      </section> */}
-
       <footer class="flex items-center justify-center">
         <p>email: murari2lakshman.ponduru@gmail.com</p>
       </footer>
       </div>
-      
+      </ParticleBackground>
     </div>
   )
 }
