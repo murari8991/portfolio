@@ -1,4 +1,6 @@
 import './App.scss';
+import  gsap  from "gsap";
+import React, { useState, useEffect, useRef } from 'react';
 import ExpandableCard from './expandableCard.jsx';
 import ParticleBackground from './particleBg.jsx';
 import { ImLinkedin2 } from "react-icons/im";
@@ -6,11 +8,37 @@ import { SiLeetcode } from "react-icons/si";
 import { IoLogoGithub } from "react-icons/io5";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { MdKeyboardArrowDown } from "react-icons/md";
+import resume from "./assets/Resume.pdf";
+import Pinwheel from './spinWheel.jsx';
 
 function App() {
+
+  const [showTopBtn, setShowTopBtn] = useState(false); // State to show button
   
+  // Effect to show the scroll to top botton only after scrolling 300px
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setShowTopBtn(true);
+      } else {
+        setShowTopBtn(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Scroll to a section based on the Section ID
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
-    <div class="text-[#c8c6d7] scroll-smooth">
+    <div id="hero" class="text-[#c8c6d7] scroll-smooth">
       <ParticleBackground>
       <section id="landing" class="flex flex-col items-center mb-96 mt-48 gap-y-4 mx-8">
         <div class="content-card">
@@ -21,12 +49,12 @@ function App() {
         </div>
       </section>
       
-      
       <div class="mx-8">
       <section id="about" class="flex flex-col items-center mb-40 wrapper">
-        <div class="content-card flex flex-col gap-6">
-          <div class="pt-4">
-            <h3 class="text-2xl font-bold">About me</h3>
+        <div class="flex flex-col gap-6">
+          <div class="pt-4 flex gap-4">
+            <Pinwheel />
+            <h3 class="text-[#aca1eb] text-2xl font-bold">About me</h3>
           </div>
           <hr></hr>
           <div class="flex flex-col gap-4">
@@ -38,6 +66,23 @@ function App() {
               My goal is to be a developer, watching and contributing to the everchanging technology.
             </p>
           </div>
+          <div class="border-t flex flex-col gap-6">
+            <h2 class="text-[#aca1eb] text-5xl font-bold mt-6">Want to know more about me?</h2>
+            <div class="flex flex-wrap gap-6">
+              <button onClick={() => scrollToSection('skills')} class="skill-chip">My Skills</button>
+              <button onClick={() => scrollToSection('experience')} class="skill-chip">My Experience</button>
+              <button onClick={() => scrollToSection('edu')} class="skill-chip">My Education</button>
+              <button onClick={() => scrollToSection('projects')} class="skill-chip">My Projects</button>
+              <a href={resume} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="skill-chip flex items-center gap-1">
+                My Resume
+                <span class="material-symbols-outlined font-light">
+                  open_in_new </span>
+              </a>
+            </div>
+          </div>
           <div class="flex gap-4 mb-4">
             <a href="https://www.linkedin.com/in/s-m-v-a-lakshmanacharyulu-ponduru-43b8aa24b" class="p-2 border border-[#c8c6d7] rounded-full icon-wrap"><ImLinkedin2  class="size-5 icon"/></a>
             <a href="https://github.com/Murari-Lakshman" class="p-2 border border-[#c8c6d7] rounded-full icon-wrap"><IoLogoGithub class="size-5 icon"/></a>
@@ -48,7 +93,8 @@ function App() {
 
       <section id="skills" class="flex flex-col mb-40">
         <div class="flex flex-col gap-6">
-          <div class="pt-4">
+          <div class="pt-4 flex gap-4">
+            <Pinwheel />
             <h3 class="text-[#aca1eb] text-2xl font-bold">Skills and Stack</h3>
           </div>
           <hr></hr>
@@ -108,7 +154,8 @@ function App() {
 
       <section id="experience" class="flex flex-col mb-40">
         <div class="flex flex-col gap-6">
-          <div class="pt-4">
+          <div class="pt-4 flex gap-4">
+            <Pinwheel />
             <h3 class="text-[#aca1eb] text-2xl font-bold">My Experience</h3>
           </div>
           <ul class="flex flex-col gap-12 mb-4">
@@ -133,7 +180,8 @@ function App() {
 
       <section id="edu" class="flex flex-col mb-40">
         <div class="flex flex-col gap-6">
-          <div class="pt-4">
+          <div class="pt-4 flex gap-4">
+            <Pinwheel />
             <h3 class="text-[#aca1eb] text-2xl font-bold">Education</h3>
           </div>
           <ul class="flex flex-col gap-12 mb-4">
@@ -164,7 +212,8 @@ function App() {
 
       <section id="projects"  class="flex flex-col mb-16">
         <div class="flex flex-col gap-6">
-          <div class="pt-4">
+          <div class="pt-4 flex gap-4">
+            <Pinwheel />
             <h3 class="text-[#aca1eb] text-2xl font-bold">Projects</h3>
           </div>
           <ul class="flex flex-col gap-12 mb-4">
@@ -172,8 +221,11 @@ function App() {
               <div class="flex flex-col gap-4 mb-2">
                 <div class="flex justify-between">
                   <h2 class="text-2xl font-bold mt-3">ML Model to Find Salary Using Experience</h2>
-                  <div>
-                  <a href="https://github.com/Murari-Lakshman/Simple-Linear-Regression" class="flex rounded mt-5 p-1 icon-wrap"><FaExternalLinkAlt class="size-4 icon"/></a>
+                  <div class="flex items-center">
+                    <a href="https://github.com/Murari-Lakshman/Simple-Linear-Regression" class="flex rounded p-1 icon-wrap md:mt-3">
+                    <span class="material-symbols-outlined icon">
+                    open_in_new </span>
+                    </a>
                   </div>
                 </div>
                 <hr></hr>
@@ -189,8 +241,10 @@ function App() {
               <div class="flex flex-col gap-4 mb-2">
                 <div class="flex justify-between">
                   <h2 class="text-2xl font-bold mt-3">Web-Crawling and Data Cleaning using Python</h2>
-                  <div>
-                  <a href="https://github.com/Murari-Lakshman/WebCrawling-Allergies" class="flex rounded mt-5 p-1 icon-wrap"><FaExternalLinkAlt class="size-4 icon"/></a>
+                  <div class="flex items-center">
+                    <a href="https://github.com/Murari-Lakshman/WebCrawling-Allergies" class="flex rounded md:mt-3 p-1 icon-wrap">
+                    <span class="material-symbols-outlined icon">
+                    open_in_new </span></a>
                   </div>
                 </div>
                 <hr></hr>
@@ -204,8 +258,10 @@ function App() {
               <div class="flex flex-col gap-4 mb-2">
                 <div class="flex justify-between">
                   <h2 class="text-2xl font-bold mt-3">My Portfolio</h2>
-                  <div>
-                  <a href="https://github.com/murari8991/portfolio" class="flex rounded mt-5 p-1 icon-wrap"><FaExternalLinkAlt class="size-4 icon"/></a>
+                  <div class="flex items-center">
+                  <a href="https://github.com/murari8991/portfolio" class="flex rounded mt-3 p-1 icon-wrap">
+                  <span class="material-symbols-outlined icon">
+                  open_in_new </span></a>
                   </div>
                 </div>
                 <hr></hr>
@@ -223,6 +279,17 @@ function App() {
       <footer class="flex items-center justify-center">
         <p>email: murari2lakshman.ponduru@gmail.com</p>
       </footer>
+
+      <div id="backtop" class="fixed bottom-8 right-8 z-50">
+        <button 
+        onClick={()=> scrollToSection('hero')}
+        aria-label="Scroll to top"
+        className={`skill-chip rounded transition-all duration-300 ease-in-out transform hover:-translate-y-1 focus:outline-none focus:ring-offset-2 focus:ring-2
+          ${showTopBtn 
+            ? 'opacity-100 translate-y-0' 
+            : 'opacity-0 translate-y-8 pointer-events-none'
+        }`}><MdKeyboardArrowDown class="rotate-180"/></button>
+      </div>
       </div>
       </ParticleBackground>
     </div>
