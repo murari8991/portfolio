@@ -76,7 +76,7 @@ function App() {
               <a href={resume} 
               target="_blank" 
               rel="noopener noreferrer" 
-              class="skill-chip flex items-center gap-2">
+              class="skill-chip flex items-center gap-1">
                 My Resume
                 <span class="material-symbols-outlined font-light">
                   open_in_new </span>
