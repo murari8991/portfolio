@@ -10,6 +10,7 @@ import { FaExternalLinkAlt } from "react-icons/fa";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import resume from "./assets/Resume.pdf";
 import Pinwheel from './spinWheel.jsx';
+import AnimatedButton from './AnimateBtn.jsx'
 
 function App() {
 
@@ -69,7 +70,7 @@ function App() {
           <div class="border-t flex flex-col gap-6">
             <h2 class="text-[#aca1eb] text-5xl font-bold mt-6">Want to know more about me?</h2>
             <div class="flex flex-wrap gap-6">
-              <button onClick={() => scrollToSection('skills')} class="skill-chip">My Skills</button>
+              <AnimatedButton onClick={() => scrollToSection('skills')} class="skill-chip">My Skills</AnimatedButton>
               <button onClick={() => scrollToSection('experience')} class="skill-chip">My Experience</button>
               <button onClick={() => scrollToSection('edu')} class="skill-chip">My Education</button>
               <button onClick={() => scrollToSection('projects')} class="skill-chip">My Projects</button>
