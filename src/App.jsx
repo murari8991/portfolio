@@ -70,18 +70,18 @@ function App() {
           <div class="border-t flex flex-col gap-6">
             <h2 class="text-[#aca1eb] text-5xl font-bold mt-6">Want to know more about me?</h2>
             <div class="flex flex-wrap gap-6">
-              <AnimatedButton onClick={() => scrollToSection('skills')} class="skill-chip">My Skills</AnimatedButton>
-              <button onClick={() => scrollToSection('experience')} class="skill-chip">My Experience</button>
-              <button onClick={() => scrollToSection('edu')} class="skill-chip">My Education</button>
-              <button onClick={() => scrollToSection('projects')} class="skill-chip">My Projects</button>
-              <a href={resume} 
+              <AnimatedButton onClick={() => scrollToSection('skills')}>My Skills</AnimatedButton>
+              <AnimatedButton onClick={() => scrollToSection('experience')}>My Experience</AnimatedButton>
+              <AnimatedButton onClick={() => scrollToSection('edu')}>My Education</AnimatedButton>
+              <AnimatedButton onClick={() => scrollToSection('projects')}>My Projects</AnimatedButton>
+              <AnimatedButton href={resume} 
               target="_blank" 
-              rel="noopener noreferrer" 
-              class="skill-chip flex items-center gap-1">
+              rel="noopener noreferrer" >
+                <div class="flex gap-1">
                 My Resume
                 <span class="material-symbols-outlined font-light">
-                  open_in_new </span>
-              </a>
+                  open_in_new </span></div>
+              </AnimatedButton>
             </div>
           </div>
           <div class="flex gap-4 mb-4">
