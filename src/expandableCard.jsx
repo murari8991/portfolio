@@ -3,7 +3,7 @@ import './App.scss';
 import { MdKeyboardArrowDown } from "react-icons/md";
 
 
-export default function ExpandableCard({sub1, sub2, title, desc}) {
+export default function ExpandableCard({sub1, sub2, title, desc, children}) {
     const [open, setOpen] = useState(false);
     
     return (
@@ -24,6 +24,7 @@ export default function ExpandableCard({sub1, sub2, title, desc}) {
                 <div className="m-4">
                 <hr />
                 <p className="text-lg font-semibold mt-4">{desc}</p>
+                {children}
                 </div>
             )}
         </div>
