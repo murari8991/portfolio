@@ -10,6 +10,11 @@ import { FaExternalLinkAlt } from "react-icons/fa";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import resume from "./assets/Resume.pdf";
 import Pinwheel from './spinWheel.jsx';
+import AnimatedButton from './AnimateBtn.jsx';
+import modelGraph from './assets/modelGraph.png';
+import website from './assets/websitess.png';
+
+
 
 function App() {
 
@@ -44,7 +49,7 @@ function App() {
         <div class="content-card">
           <h1 class="font-bold hero text-6xl text-center">Murari Ponduru</h1>
         </div>
-        <div class="typewriter content-card">
+        <div class="typewriter content-card text-3xl md:text-4xl">
           <span class="placeholder"></span>
         </div>
       </section>
@@ -69,18 +74,18 @@ function App() {
           <div class="border-t flex flex-col gap-6">
             <h2 class="text-[#aca1eb] text-5xl font-bold mt-6">Want to know more about me?</h2>
             <div class="flex flex-wrap gap-6">
-              <button onClick={() => scrollToSection('skills')} class="skill-chip">My Skills</button>
-              <button onClick={() => scrollToSection('experience')} class="skill-chip">My Experience</button>
-              <button onClick={() => scrollToSection('edu')} class="skill-chip">My Education</button>
-              <button onClick={() => scrollToSection('projects')} class="skill-chip">My Projects</button>
-              <a href={resume} 
+              <AnimatedButton onClick={() => scrollToSection('skills')}>My Skills</AnimatedButton>
+              <AnimatedButton onClick={() => scrollToSection('experience')}>My Experience</AnimatedButton>
+              <AnimatedButton onClick={() => scrollToSection('edu')}>My Education</AnimatedButton>
+              <AnimatedButton onClick={() => scrollToSection('projects')}>My Projects</AnimatedButton>
+              <AnimatedButton href={resume} 
               target="_blank" 
-              rel="noopener noreferrer" 
-              class="skill-chip flex items-center gap-1">
+              rel="noopener noreferrer" >
+                <div class="flex gap-1">
                 My Resume
                 <span class="material-symbols-outlined font-light">
-                  open_in_new </span>
-              </a>
+                  open_in_new </span></div>
+              </AnimatedButton>
             </div>
           </div>
           <div class="flex gap-4 mb-4">
@@ -161,18 +166,48 @@ function App() {
           <ul class="flex flex-col gap-12 mb-4">
             <li>
               <ExpandableCard title="Summer Intern" 
-              desc="Designed a custom MCP for an in-house Gen-AI application that utilizes a RAG.
-                  Contributed to modernizing the company's product by developing a new front-end using React and TypeScript.
-                  Obfuscated the proprietry source code of using Python to ensure reliablity during training." 
-              sub1="CoreCard, Norcross, Georgia" 
-              sub2="May 2025 to July 2025"/>
+              sub2="May 2025 to July 2025"
+              sub1="Core Card, Norcross, GA">
+                <div class="ml-3 mt-4">
+                <ul class="list-disc list-outside text-lg font-semibold">
+                  <li>
+                    Most of my current knowledge can be attributed to this internship,
+                    it was a major learning curve but had a blast learning all the cool new stuff.
+                  </li>
+                  <li>
+                    Designed a custom MCP for a RAG finetuned and fed with various company doc.
+                    The model ran internally on company servers. My team and I saw this project through to the end
+                    and deployed it for the use.
+                  </li>
+                  <li>
+                    Learnt front end development using typescript and react and applied it to deliver front-end for
+                    a revamped company product.
+                  </li>
+                  <li>
+                    Developed an obfuscation script that scrambled important information from the source code for generating 
+                    high quality data to train AI models.
+                  </li>
+                </ul>
+                </div>
+              </ExpandableCard>
             </li>
             <li>
               <ExpandableCard title="Software Intern"
               sub1="Techsophy Solutions, Hyd, IN" 
-              sub2="May 2023 to July 2023"
-              desc="Employed Machine Vision and AI to detect cars to secure a community and track the cars going in and out.
-                  Fine-tuned YOLO V5 model to ensure proper detection."/>
+              sub2="May 2023 to July 2023">
+                    <div class="ml-3 mt-4">
+                      <ul class="list-disc list-outside text-lg font-semibold">
+                        <li>
+                          This was the internship that piqued my interest in Machine Learning and AI model 
+                          fine-tuning, training and development.
+                        </li>
+                        <li>
+                          As a part of project Sequredge, finetuned YOLO v5 computer vision model to identify and detect
+                          cars entering a garage to enhance the security of a community.
+                        </li>
+                      </ul>
+                    </div>
+              </ExpandableCard>
             </li>
           </ul>
         </div>
@@ -218,7 +253,7 @@ function App() {
           </div>
           <ul class="flex flex-col gap-12 mb-4">
             <li class="content-card">
-              <div class="flex flex-col gap-4 mb-2">
+              <div class="flex flex-col gap-4 m-3">
                 <div class="flex justify-between">
                   <h2 class="text-2xl font-bold mt-3">ML Model to Find Salary Using Experience</h2>
                   <div class="flex items-center">
@@ -229,16 +264,35 @@ function App() {
                   </div>
                 </div>
                 <hr></hr>
-                <p class="text-lg font-semibold">
-                  A Simple linear regression model to predict the salary using the experience of an individual. 
-                  This is model that is created only using numpy and matplotlib 
-                  (with the exception of sklearn to determine how accurate our model is using r2 score). 
-                  First we use a very simple dataset downloaded from Kaggle.
-                </p>
+                <div class=" flex flex-col gap-10 md:flex-row">
+                  <div class="ml-3">
+                  <ul class="list-disc list-outside text-base">
+                    <li>
+                      A Simple linear regression model to predict the salary using the experience of an individual.
+                    </li>
+                    <li>
+                      This is model that is created only using numpy and matplotlib 
+                      (with the exception of sklearn to determine how accurate our model is using r2 score). 
+                    </li>
+                    <li>
+                      First we use a very simple dataset downloaded from Kaggle,
+                      Dataset has 30 examples. Our model is an python notebook called Sal_dat_lin_reg.
+                    </li>
+                    <li>
+                      Since the data values have massive differences, I also decided to scale the features using general scaling.
+                      This made the model faster and way easier to compute when around 10000 epochs are given.
+                    </li>
+                    <li>
+                      We used r2 score to guage the model's accuracy and found it to be 0.99.
+                    </li>
+                  </ul>
+                  </div>
+                  <img src={modelGraph} alt="desc" class=" w-full md:w-[45rem] md:h-60 rounded-lg"></img>
+                </div>
               </div>
             </li>
             <li class="content-card">
-              <div class="flex flex-col gap-4 mb-2">
+              <div class="flex flex-col gap-4 m-3">
                 <div class="flex justify-between">
                   <h2 class="text-2xl font-bold mt-3">Web-Crawling and Data Cleaning using Python</h2>
                   <div class="flex items-center">
@@ -248,14 +302,28 @@ function App() {
                   </div>
                 </div>
                 <hr></hr>
-                <p class="text-lg font-semibold">
-                  Scraped the website for data and presented the data in a structured fashion in csv file.
-                  Utilized web crawling libraries like beautifulSoup.
-                </p>
+                <div class="ml-3">
+                <ul class="list-disc list-outside text-base">
+                  <li>
+                    This is a simple web scraping project which uses python to crawl through websites and get its info
+                    we crawl through a website containing information regarding allergies.
+                  </li>
+                  <li>
+                    The website has several nested links each pointing to an allergen or its related information.
+                  </li>
+                  <li>
+                    Our script carefully scrapes through these nested links and pull all the information and converts them into a pandas Dataframe.
+                  </li>
+                  <li>
+                    Finally, we organize the data, structure it into a csv file, which is the output of the project.
+                    The csv contains, information of all the allergens and the information that the website had to offer.
+                  </li>
+                </ul>
+                </div>
               </div>
             </li>
             <li class="content-card">
-              <div class="flex flex-col gap-4 mb-2">
+              <div class="flex flex-col gap-4 m-3">
                 <div class="flex justify-between">
                   <h2 class="text-2xl font-bold mt-3">My Portfolio</h2>
                   <div class="flex items-center">
@@ -265,11 +333,22 @@ function App() {
                   </div>
                 </div>
                 <hr></hr>
-                <p class="text-lg font-semibold">
-                  This is a static website developed using HTML, CSS, JS, React and Vite.
-                  I am still building it, so I am leaving the description empty.
-                  This website contains all my achievements and also acts as a text of my skills.
-                </p>
+                <div class=" flex flex-col gap-10 md:flex-row">
+                  <div class="ml-3">
+                    <ul class="list-disc list-outside text-base">
+                      <li>
+                        This is a portfolio website that was created using HTML, ReactJS, SCSS + Tailwind CSS.
+                      </li>
+                      <li>
+                        It holds, information about my education, professional experience, my skills and information about various project. 
+                      </li>
+                      <li>
+                        This website also holds links to linkedIn, github, leetcode and my resume.
+                      </li>
+                    </ul>
+                  </div>
+                  <img src={website} alt="image of website"  class="w-full md:w-96 md:h-52 rounded-lg"/>
+                </div>
               </div>
             </li>
           </ul>
